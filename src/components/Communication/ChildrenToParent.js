@@ -6,7 +6,7 @@ class ChildrenToParent extends Component {
   render() {
     return (
       <div>
-        <h3>i am children To Parent</h3>
+        <h3>i am ChildrenToParent</h3>
         <button onClick={this.handleClick.bind(this)}>childrenToParent</button>
         
       </div>
