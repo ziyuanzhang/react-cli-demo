@@ -3,6 +3,7 @@ class routeParam extends Component {
     componentWillMount(){
         console.log(this.props);
     }
+    
     render() {
         return (
             <div className="routeParam">
