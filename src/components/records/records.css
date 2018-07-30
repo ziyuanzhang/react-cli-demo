@@ -1,0 +1,39 @@
+.records{
+    margin: 10px 20px;
+}
+.list{
+    padding-left: 0px;
+    list-style: none;
+    border: 1px solid #000;
+}
+.list-item{
+    display: flex;
+    border-bottom: 1px solid #000;
+}
+.list-item-title{
+    background-color: #ccc;
+}
+.list-item:last-child{
+    border-bottom:none;
+}
+.list-item div{    
+    height: 30px;
+    padding-top: 10px;
+}
+.list-item>div{
+    flex: 1;
+    border-right: 1px solid #000;
+}
+.list-item>div:last-child{
+    border-right: none;
+}
+.error{
+    margin: 10px 20px;
+    border: 2px solid red;
+    padding: 20px;
+}
+.loading{
+    margin: 10px 20px;
+    border: 2px solid red;
+    padding: 20px;
+}

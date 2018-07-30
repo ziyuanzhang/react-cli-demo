@@ -10,6 +10,7 @@ import HomeB from './components/HomeB';
 import HomeC from './components/HomeC';
 import routeParam from './components/routeParam';
 import Error404 from './components/error/Error404';
+import Records from './components/records/Records'
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />            
             <Route path="/HomeB" component={HomeB} />
             <Route path="/HomeC" component={HomeC} />
+            <Route path="/records" component={Records} />
             <Route path="/routeParam/:id" component={routeParam} />
             <Redirect from="/redirect" to="/" />
             <Route  component={Error404} />
