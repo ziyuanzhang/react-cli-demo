@@ -1,39 +1,75 @@
-.records{
+.records {
     margin: 10px 20px;
 }
-.list{
+
+.list {
     padding-left: 0px;
     list-style: none;
     border: 1px solid #000;
 }
-.list-item{
+
+.list-item {
     display: flex;
     border-bottom: 1px solid #000;
 }
-.list-item-title{
+
+.list-item-title {
     background-color: #ccc;
 }
-.list-item:last-child{
-    border-bottom:none;
+
+.list-item:last-child {
+    border-bottom: none;
 }
-.list-item div{    
+
+.list-item div {
     height: 30px;
     padding-top: 10px;
 }
-.list-item>div{
+
+.list-item>div {
     flex: 1;
     border-right: 1px solid #000;
 }
-.list-item>div:last-child{
+
+.list-item>div:last-child {
     border-right: none;
 }
-.error{
+
+.error {
     margin: 10px 20px;
     border: 2px solid red;
     padding: 20px;
 }
-.loading{
+
+.loading {
     margin: 10px 20px;
     border: 2px solid red;
     padding: 20px;
 }
+
+.AmountBoxS {
+    display: flex;
+    border: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+.Amount-container {
+    flex: 1;
+    border-right: 1px solid #000
+}
+
+.Amount-container:last-child {
+    border: none;
+}
+
+.Amount-container p{
+    margin: 0px;
+    padding: 5px 0;
+}
+
+.Amount-title {
+    background-color: #ccc;
+    border-bottom: 1px solid #000;
+}
+
+.Amount-body {}

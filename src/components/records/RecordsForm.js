@@ -1,4 +1,6 @@
 import React,{ Component }  from 'react';
+import axios from 'axios';
+import {baseAPI}  from '../../utills/RecordsAPI';
 
 
 class RecordsForm extends Component{
@@ -21,16 +23,32 @@ class RecordsForm extends Component{
         ))
 
     }
+    handleSubmit(event){
+        event.preventDefault();
+        axios.post(`${baseAPI}/api/records`,this.state)
+        .then((res)=>{
+            console.log("handleSubmit:",res);
+            this.props.handleNewRecord(res.data);
+            this.setState({
+                date:"",
+                title:"",
+                amount:""
+            })
+        }).catch(
+            (error)=>{console.log("handleSubmitError:",error)}
+        )
+
+    }
     vaild(){ 
        return  this.state.date&&this.state.title&&this.state.amount;
     }
 
     render(){
         return(
-            <form >
-               <label>Date:<input type="text" placeholder='Date' name="date" onChange={this.handleChange.bind(this)}/> </label>
-               <label>Title:<input type="text" placeholder='Title' name="title" onChange={this.handleChange.bind(this)}/> </label>
-               <label>Amount:<input type="number" placeholder='Amount' name="amount" onChange={this.handleChange.bind(this)}/> </label>
+            <form onSubmit={this.handleSubmit.bind(this)}>
+               <label>Date:<input type="text" placeholder='Date' name="date" onChange={this.handleChange.bind(this)} value={this.state.date}/> </label>
+               <label>Title:<input type="text" placeholder='Title' name="title" onChange={this.handleChange.bind(this)} value={this.state.title}/> </label>
+               <label>Amount:<input type="text" placeholder='Amount' name="amount" onChange={this.handleChange.bind(this)} value = {this.state.amount}/> </label>
                <button disabled={!this.vaild()}>提交</button>
             </form>
         )
