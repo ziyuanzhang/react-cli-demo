@@ -15,7 +15,7 @@ import Records from './components/records/Records'
 class App extends Component {
   render() {
     return (
-      <Router basename="demo" >
+      <Router  basename="react-cli-demo" >
         <div className="App">
           <Header />
           <NavBar />
@@ -27,9 +27,9 @@ class App extends Component {
             <Route exact path="/" component={Home} />            
             <Route path="/HomeB" component={HomeB} />
             <Route path="/HomeC" component={HomeC} />
-            <Route path="/records" component={Records} />
             <Route path="/routeParam/:id" component={routeParam} />
             <Redirect from="/redirect" to="/" />
+            <Route path="/records" component={Records} />
             <Route  component={Error404} />
           </Switch>
           <Footer />

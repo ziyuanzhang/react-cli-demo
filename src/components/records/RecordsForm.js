@@ -15,7 +15,14 @@ class RecordsForm extends Component{
     handleChange(event){
         let obj;       
         let name = event.target.name;
-        let value = event.target.value; 
+        let value = event.target.value;         
+         //value = Number.parseFloat(value);
+
+        /* if(Number.isFinite(value) ){
+            console.log('value2:',value)
+        }else{
+            return
+        } */
         this.setState((
             obj={},
             obj[name] = value,
@@ -46,9 +53,9 @@ class RecordsForm extends Component{
     render(){
         return(
             <form onSubmit={this.handleSubmit.bind(this)}>
-               <label>Date:<input type="text" placeholder='Date' name="date" onChange={this.handleChange.bind(this)} value={this.state.date}/> </label>
+               <label>Date:<input type="number" placeholder='Date' name="date" onChange={this.handleChange.bind(this)} value={this.state.date}/> </label>
                <label>Title:<input type="text" placeholder='Title' name="title" onChange={this.handleChange.bind(this)} value={this.state.title}/> </label>
-               <label>Amount:<input type="text" placeholder='Amount' name="amount" onChange={this.handleChange.bind(this)} value = {this.state.amount}/> </label>
+               <label>Amount:<input type="number" placeholder='Amount' name="amount" onChange={this.handleChange.bind(this)} value = {this.state.amount}/> </label>
                <button disabled={!this.vaild()}>提交</button>
             </form>
         )
